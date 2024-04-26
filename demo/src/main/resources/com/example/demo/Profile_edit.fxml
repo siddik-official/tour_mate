@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" stylesheets="@../../../values/constraints.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.EditProfileController">
+   <top>
+      <AnchorPane prefHeight="49.0" prefWidth="1050.0" styleClass="primary-colour" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="sidebarToggleClose" fitHeight="28.0" fitWidth="35.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../media/menu.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="sidebarToggleOpen" fitHeight="28.0" fitWidth="35.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../media/menu.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="939.0" layoutY="2.0" prefHeight="43.0" prefWidth="103.0" spacing="4.0">
+               <children>
+                  <Button fx:id="minimizeApplication" mnemonicParsing="false" onAction="#setMinimizeApplication" prefHeight="25.0" prefWidth="19.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Minimize.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="exitApplication" mnemonicParsing="false" onAction="#setExitApplication" prefHeight="20.0" prefWidth="18.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Exit.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <Label alignment="CENTER" layoutX="89.0" layoutY="15.0" prefHeight="16.0" prefWidth="83.0" text="TOURMATE" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Book" size="17.0" />
+               </font>
+            </Label>
+            <Separator layoutX="180.0" layoutY="6.0" opacity="0.5" orientation="VERTICAL" prefHeight="38.0" prefWidth="0.0" />
+            <HBox alignment="CENTER" layoutX="197.0" layoutY="8.0" prefHeight="34.0" prefWidth="216.0" style="-fx-border-radius: 50; -fx-border-color: #D7D7D7;">
+               <children>
+                  <TextField fx:id="searchBar" prefHeight="26.0" prefWidth="182.0" promptText="Search" style="-fx-background-color: transparent; -fx-border-radius: 50; -fx-font: Calibri;" />
+                  <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../media/Search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="713.0" prefWidth="1005.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="315.0" layoutY="650.0" prefHeight="32.0" prefWidth="371.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: transparent; -fx-text-fill: #0f1554;" text="Save changes">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../media/Save.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: transparent; -fx-text-fill: #0f1554;" text="Discard changes">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../media/system.exit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <VBox layoutX="24.0" layoutY="31.0" prefHeight="606.0" prefWidth="270.0" spacing="15.0">
+                     <children>
+                        <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="184.0" prefWidth="352.0" spacing="18.0">
+                           <children>
+                              <Label text="Profile Picture">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" minWidth="-Infinity" prefHeight="100.0" prefWidth="318.0" spacing="18.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px;">
+                                 <children>
+                                    <Circle fx:id="profileImageBorder" radius="57.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Button fx:id="editProfileImage" mnemonicParsing="false" onAction="#siphonResource" style="-fx-background-radius: 15px;" styleClass="plan-wrapper" text="Edit" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../media/Edit2.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button mnemonicParsing="false" style="-fx-background-radius: 15px; -fx-background-color: #8c1616;" text="Remove" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../media/Delete.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="184.0" prefWidth="352.0" spacing="18.0">
+                           <children>
+                              <Label text="Name">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" minWidth="-Infinity" prefHeight="100.0" prefWidth="318.0" spacing="18.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px;">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="First Name">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField prefHeight="27.0" prefWidth="200.0" style="-fx-background-radius: 20px;" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" minWidth="-Infinity" prefHeight="100.0" prefWidth="318.0" spacing="18.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px;">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="Last Name">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField prefHeight="27.0" prefWidth="200.0" style="-fx-background-radius: 20px;" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="167.0" prefWidth="351.0" spacing="18.0">
+                           <children>
+                              <Label text="Bio">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" minWidth="-Infinity" prefHeight="100.0" prefWidth="351.0" spacing="18.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px;">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <TextArea prefHeight="77.0" prefWidth="331.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <Separator layoutX="399.0" layoutY="14.0" orientation="VERTICAL" prefHeight="608.0" prefWidth="0.0" />
+                  <VBox layoutX="416.0" layoutY="31.0" prefHeight="224.0" prefWidth="430.0" spacing="18.0">
+                     <children>
+                        <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="78.0" prefWidth="428.0" spacing="18.0">
+                           <children>
+                              <Label text="Address">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField prefHeight="27.0" prefWidth="430.0" styleClass="Text-field" />
+                           </children>
+                        </VBox>
+                        <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="78.0" prefWidth="428.0" spacing="18.0">
+                           <children>
+                              <Label text="Contact Information">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Email">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="shakibakram123@gmail.com">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Phone number">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField prefHeight="27.0" prefWidth="235.0" styleClass="Text-field" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="78.0" prefWidth="352.0" spacing="18.0">
+                           <children>
+                              <Label text="Other">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Gender">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox prefHeight="26.0" prefWidth="94.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Label text="Nationality">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox prefHeight="26.0" prefWidth="94.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" layoutX="416.0" layoutY="542.0" prefHeight="32.0" prefWidth="512.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: transparent; -fx-text-fill: #0f1554;" text="Change Password">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../media/Change%20Password.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: transparent; -fx-text-fill: #0f1554;" text="Privacy Settings">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../media/PrivacySettings.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: transparent; -fx-text-fill: #0f1554;" text="Security Settings">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../media/SecuritySettings.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <AnchorPane fx:id="sidebarAnchorPane" layoutY="2.0" minHeight="702.0" prefHeight="702.0" prefWidth="135.0" styleClass="sidebar-anchorpane">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="334.0" prefWidth="135.0" spacing="16.0" AnchorPane.bottomAnchor="369.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="36.0" prefWidth="135.0" styleClass="sidebar-button" text="Home">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="goToProfileView" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#viewProfile" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Profile">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="goToDashboard" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goToDashboardFunc" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Dashboard">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Notifications">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="goToSettings" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#setGoToSettings" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Settings">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutY="533.0" prefHeight="195.0" prefWidth="135.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Button fx:id="sidebarLogoutButton" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="5.0" mnemonicParsing="false" onAction="#logout" prefHeight="37.0" prefWidth="142.0" styleClass="sidebar-button" text="Sign out">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../media/LogoutSidebar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="5.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="142.0" styleClass="sidebar-button" text="Help">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="5.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="142.0" styleClass="sidebar-button" text="Report">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" height="102.3" offsetX="6.0" offsetY="9.0" radius="39.0975" spread="0.03" width="56.09">
+                           <color>
+                              <Color opacity="0.693009078502655" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+   <left>
+      <AnchorPane minHeight="491.0" prefHeight="675.0" prefWidth="47.0" styleClass="sidebar-anchorpane" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" layoutX="-3.2" layoutY="97.0" onMouseClicked="#viewProfile" prefHeight="152.0" prefWidth="53.0" spacing="15.0" AnchorPane.bottomAnchor="467.0" AnchorPane.leftAnchor="-3.2" AnchorPane.rightAnchor="-2.3999999999999986" AnchorPane.topAnchor="97.0">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Home.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="goToProfileView1" mnemonicParsing="false" onAction="#viewProfile" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" onMouseClicked="#viewProfile" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/profile.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Dashboard.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Notification.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Settings.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

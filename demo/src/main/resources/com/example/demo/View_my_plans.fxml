@@ -1,0 +1,1779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1150.0" stylesheets="@../../../values/constraints.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MyPlansController">
+   <top>
+      <AnchorPane prefHeight="49.0" prefWidth="1050.0" styleClass="primary-colour" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="sidebarToggleClose" fitHeight="28.0" fitWidth="35.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../media/menu.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="sidebarToggleOpen" fitHeight="28.0" fitWidth="35.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../media/menu.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="1032.0" layoutY="2.0" prefHeight="43.0" prefWidth="103.0" spacing="4.0">
+               <children>
+                  <Button fx:id="minimizeApplication" mnemonicParsing="false" onAction="#setMinimizeApplication" prefHeight="25.0" prefWidth="19.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Minimize.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="exitApplication" mnemonicParsing="false" onAction="#setExitApplication" prefHeight="20.0" prefWidth="18.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Exit.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <Label alignment="CENTER" layoutX="89.0" layoutY="15.0" prefHeight="16.0" prefWidth="83.0" text="TOURMATE" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Book" size="17.0" />
+               </font>
+            </Label>
+            <Separator layoutX="180.0" layoutY="6.0" opacity="0.5" orientation="VERTICAL" prefHeight="38.0" prefWidth="0.0" />
+            <HBox alignment="CENTER" layoutX="197.0" layoutY="8.0" prefHeight="34.0" prefWidth="216.0" style="-fx-border-radius: 50; -fx-border-color: #D7D7D7;">
+               <children>
+                  <TextField fx:id="searchBar" prefHeight="26.0" prefWidth="182.0" promptText="Search" style="-fx-background-color: transparent; -fx-border-radius: 50;" />
+                  <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../media/Search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="713.0" prefWidth="1004.0">
+               <children>
+                  <Label alignment="CENTER" graphicTextGap="10.0" layoutX="14.0" layoutY="22.0" prefHeight="42.0" prefWidth="198.0" text="My Plans">
+                     <font>
+                        <Font name="Calibri Bold" size="33.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="14.0" layoutY="62.0" prefHeight="1.0" prefWidth="215.0" />
+                  <VBox layoutX="16.0" layoutY="104.0" prefHeight="200.0" prefWidth="212.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="goToCreatePlan" alignment="BASELINE_LEFT" graphicTextGap="8.0" mnemonicParsing="false" onAction="#goToCreatePlanFunc" prefHeight="45.0" prefWidth="162.0" style="-fx-background-color: transparent;" text="Create new plan">
+                           <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../media/Add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="99.0" style="-fx-background-color: transparent;" text="Saved">
+                           <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../media/Saved%20Plans.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="115.0" style="-fx-background-color: transparent;" text="Discover">
+                           <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../media/Discover.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <HBox alignment="BASELINE_LEFT" layoutX="247.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="372.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="goToCreatedPlans" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="146.0" style="-fx-background-radius: 15px; -fx-background-color: transparent;" text="Plans you've made">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="goToJoinedPlans" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="167.0" style="-fx-background-radius: 15px; -fx-background-color: transparent;" text="Plans you've joined">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator layoutX="247.0" layoutY="62.0" prefHeight="0.0" prefWidth="346.0" />
+                  <StackPane layoutX="187.0" layoutY="83.0" prefHeight="642.0" prefWidth="909.0">
+                     <children>
+                        <ScrollPane fx:id="joinedPlansScreen" prefHeight="504.0" prefWidth="696.0" style="-fx-border-color: #fff;">
+                           <content>
+                              <VBox prefHeight="352.0" prefWidth="508.0" spacing="35.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Leave" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Opt%20out.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Leave" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Opt%20out.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Leave" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Opt%20out.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Leave" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Opt%20out.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Leave" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Opt%20out.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Leave" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Opt%20out.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Leave" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Opt%20out.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Leave" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Opt%20out.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                           <padding>
+                              <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                           </padding>
+                        </ScrollPane>
+                        <ScrollPane fx:id="createdPlansScreen" prefHeight="504.0" prefWidth="696.0" style="-fx-border-color: #fff;">
+                           <content>
+                              <VBox prefHeight="803.0" prefWidth="778.0" spacing="35.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button fx:id="goToPlanView" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setGoToPlanView" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-background-color: #8c1616;" text="Delete plan" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Remove%20plan.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-background-color: #8c1616;" text="Delete plan" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Remove%20plan.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-background-color: #8c1616;" text="Delete plan" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Remove%20plan.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-background-color: #8c1616;" text="Delete plan" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Remove%20plan.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-background-color: #8c1616;" text="Delete plan" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Remove%20plan.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-background-color: #8c1616;" text="Delete plan" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Remove%20plan.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-background-color: #8c1616;" text="Delete plan" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Remove%20plan.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="174.0" prefWidth="426.0" spacing="10.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                                             <children>
+                                                <Label alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="538.0" text="[Origin] to [Destination]">
+                                                   <font>
+                                                      <Font name="Calibri Bold" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="16.0" prefWidth="531.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="54.0" text="STATUS: ">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="18.0" prefWidth="142.0" text="[STATUS]">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="34.0" prefWidth="531.0" spacing="8.0">
+                                                   <children>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="123.0" text="[Privacy] group">
+                                                         <font>
+                                                            <Font name="Calibri Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Public.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Label>
+                                                      <Label alignment="BASELINE_LEFT" prefHeight="26.0" prefWidth="109.0" text="Member count">
+                                                         <font>
+                                                            <Font name="Calibri" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="531.0" spacing="25.0">
+                                                   <children>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="View" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/View.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" style="-fx-background-radius: 10px;" styleClass="plan-wrapper" text="Share" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Share.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="143.0" style="-fx-background-radius: 10px; -fx-background-color: #8c1616;" text="Delete plan" textFill="WHITE">
+                                                         <graphic>
+                                                            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../../../media/Remove%20plan.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <font>
+                                                            <Font size="15.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                           <padding>
+                              <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                           </padding>
+                        </ScrollPane>
+                     </children>
+                  </StackPane>
+                  <AnchorPane fx:id="sidebarAnchorPane" layoutY="-2.0" minHeight="702.0" prefHeight="754.0" prefWidth="135.0" styleClass="sidebar-anchorpane">
+                     <children>
+                        <VBox alignment="CENTER" layoutY="12.2" prefHeight="342.0" prefWidth="135.0" spacing="16.0" AnchorPane.bottomAnchor="400.6000000000001" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="12.2">
+                           <children>
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="36.0" prefWidth="135.0" styleClass="sidebar-button" text="Home">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="goToProfileView" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#viewProfile" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Profile">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="goToDashboard" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goToDashboardFunc" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Dashboard">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Notifications">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="goToSettings" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#setGoToSettings" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Settings">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutY="609.0" prefHeight="144.0" prefWidth="135.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Button fx:id="sidebarLogoutButton" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="5.0" mnemonicParsing="false" onAction="#logout" prefHeight="37.0" prefWidth="142.0" styleClass="sidebar-button" text="Sign out">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../media/LogoutSidebar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="5.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="142.0" styleClass="sidebar-button" text="Help">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="5.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="142.0" styleClass="sidebar-button" text="Report">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" height="102.3" offsetX="6.0" offsetY="9.0" radius="39.0975" spread="0.03" width="56.09">
+                           <color>
+                              <Color opacity="0.693009078502655" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+   <left>
+      <AnchorPane minHeight="491.0" prefHeight="675.0" prefWidth="47.0" styleClass="sidebar-anchorpane" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" layoutX="-3.0" layoutY="86.0" onMouseClicked="#viewProfile" prefHeight="152.0" prefWidth="53.0" spacing="15.0" AnchorPane.bottomAnchor="478.79999999999995" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="-2.6000000000000014" AnchorPane.topAnchor="86.0">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Home.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="goToProfileView11" mnemonicParsing="false" onAction="#viewProfile" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" onMouseClicked="#viewProfile" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/profile.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="goToDashboaard1" mnemonicParsing="false" onAction="#goToDashboardFunc" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Dashboard.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Notification.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="goToSettings1" mnemonicParsing="false" onAction="#setGoToSettings" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Settings.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

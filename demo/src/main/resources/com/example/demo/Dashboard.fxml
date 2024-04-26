@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1050.0" stylesheets="@../../../values/constraints.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.DashboardController">
+   <top>
+      <AnchorPane prefHeight="49.0" prefWidth="1050.0" styleClass="primary-colour" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="sidebarToggleClose" fitHeight="28.0" fitWidth="35.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../media/menu.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="sidebarToggleOpen" fitHeight="28.0" fitWidth="35.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../media/menu.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="939.0" layoutY="2.0" prefHeight="43.0" prefWidth="103.0" spacing="4.0">
+               <children>
+                  <Button fx:id="minimizeApplication" mnemonicParsing="false" onAction="#setMinimizeApplication" prefHeight="25.0" prefWidth="19.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Minimize.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="exitApplication" mnemonicParsing="false" onAction="#setExitApplication" prefHeight="20.0" prefWidth="18.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Exit.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <Label alignment="CENTER" layoutX="89.0" layoutY="15.0" prefHeight="16.0" prefWidth="83.0" text="TOURMATE" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Book" size="17.0" />
+               </font>
+            </Label>
+            <Separator layoutX="180.0" layoutY="6.0" opacity="0.5" orientation="VERTICAL" prefHeight="38.0" prefWidth="0.0" />
+            <HBox alignment="CENTER" layoutX="197.0" layoutY="8.0" prefHeight="34.0" prefWidth="216.0" style="-fx-border-radius: 50; -fx-border-color: #D7D7D7;">
+               <children>
+                  <TextField fx:id="searchBar" prefHeight="26.0" prefWidth="182.0" promptText="Search" style="-fx-background-color: transparent; -fx-border-radius: 50;" />
+                  <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../media/Search.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="713.0" prefWidth="1005.0">
+               <children>
+                  <Circle fx:id="profileImageBorder" layoutX="76.0" layoutY="90.0" radius="62.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label fx:id="fullName" layoutX="142.6" layoutY="48.8" prefHeight="29.0" prefWidth="209.0" text="Full Name" AnchorPane.bottomAnchor="672.8" AnchorPane.leftAnchor="142.6" AnchorPane.rightAnchor="653.4" AnchorPane.topAnchor="48.8">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userName" layoutX="143.0" layoutY="75.0" prefHeight="30.0" prefWidth="214.0" text="\@username">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="BASELINE_CENTER" layoutX="14.0" layoutY="182.0" prefHeight="151.0" prefWidth="552.0" spacing="15.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px; -fx-border-radius: 15px;">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="86.0" text="Your trips">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="502.0" spacing="30.0">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="68.0" prefWidth="156.0" style="-fx-background-color: #3af271; -fx-background-radius: 15px;" text="Completed">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <Label fx:id="completed_trips" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: transparent;" text="0">
+                                       <font>
+                                          <Font name="Bauhaus 93" size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </graphic>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="68.0" prefWidth="156.0" style="-fx-background-color: #20b0a4; -fx-background-radius: 15px;" text="Upcoming">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <Label fx:id="upcoming_trips" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: transparent;" text="0">
+                                       <font>
+                                          <Font name="Bauhaus 93" size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </graphic>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Button alignment="CENTER" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="68.0" prefWidth="156.0" style="-fx-background-color: #f28d3a; -fx-background-radius: 15px;" text="Interested">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <Label fx:id="interested_value" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: transparent;" text="4">
+                                       <font>
+                                          <Font name="Bauhaus 93" size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </graphic>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="568.0" layoutY="66.0" prefHeight="661.0" prefWidth="426.0" spacing="10.0">
+                     <children>
+                        <BarChart fx:id="tripFrequencyBC">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis label="Trips completed" side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <LineChart fx:id="rankHistoryLC">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis label="XP" side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </VBox>
+                  <Separator layoutX="14.0" layoutY="347.0" prefHeight="1.0" prefWidth="533.0" />
+                  <VBox alignment="BASELINE_CENTER" layoutX="14.0" layoutY="367.0" prefHeight="174.0" prefWidth="308.0" spacing="8.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px;">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="86.0" text="Your Rank">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label contentDisplay="TOP" graphicTextGap="5.0" prefWidth="170.0" text="Tier-I">
+                           <graphic>
+                              <ProgressIndicator minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="246.0" progress="0.66" scaleShape="false" />
+                           </graphic>
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Separator layoutX="14.0" layoutY="554.0" prefHeight="1.0" prefWidth="533.0" />
+                  <VBox alignment="BASELINE_CENTER" layoutX="332.0" layoutY="367.0" prefHeight="174.0" prefWidth="236.0" spacing="12.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="24.0" prefWidth="86.0" text="XP">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/XP.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="0.0" prefWidth="74.0" text="+350" textFill="RED">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox layoutX="260.0" layoutY="576.0" prefHeight="95.0" prefWidth="213.0" spacing="5.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <Button alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="94.0" style="-fx-background-color: transparent;" text="User Reviews">
+                           <graphic>
+                              <ImageView fitHeight="66.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../media/Review.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button alignment="BASELINE_CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="112.0" style="-fx-background-color: transparent;" text="Security Checkup">
+                           <graphic>
+                              <ImageView fitHeight="66.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../media/Security.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="14.0" layoutY="725.0" prefHeight="24.0" prefWidth="236.0" spacing="15.0">
+                     <children>
+                        <Hyperlink styleClass="hyperlink-small" text="Report a problem" />
+                        <Hyperlink styleClass="hyperlink-small" text="Download user data" />
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="843.0" layoutY="15.0" prefHeight="26.0" prefWidth="146.0" text="Sort By">
+                     <graphic>
+                        <ChoiceBox fx:id="sortStatsBy" prefHeight="25.0" prefWidth="101.0" />
+                     </graphic>
+                  </Label>
+                  <VBox alignment="BASELINE_CENTER" layoutX="14.0" layoutY="568.0" prefHeight="118.0" prefWidth="236.0" spacing="18.0" style="-fx-background-color: #dcdedc; -fx-background-radius: 15px;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="91.0" text="Your plans">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox prefHeight="18.0" prefWidth="236.0">
+                                 <children>
+                                    <Button fx:id="goToCreatePlan" mnemonicParsing="false" onAction="#goToCreatePlanFunc" prefHeight="26.0" prefWidth="125.0" style="-fx-background-color: transparent;" text="Create new plan" textFill="#323873">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="18.0" prefWidth="236.0">
+                                 <children>
+                                    <Button fx:id="goToViewPlan" mnemonicParsing="false" onAction="#goToViewPlanFunc" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: transparent;" text="View plans" textFill="#323873">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <AnchorPane fx:id="sidebarAnchorPane" layoutX="-5.0" layoutY="-3.0" minHeight="702.0" prefHeight="754.0" prefWidth="135.0" styleClass="sidebar-anchorpane">
+                     <children>
+                        <VBox alignment="CENTER" layoutX="1.0" layoutY="12.0" prefHeight="342.0" prefWidth="135.0" spacing="16.0" AnchorPane.bottomAnchor="401.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="12.0">
+                           <children>
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="36.0" prefWidth="135.0" styleClass="sidebar-button" text="Home">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="goToProfileView" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#viewProfile" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Profile">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="goToDashboard" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goToDashboardFunc" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Dashboard">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Notifications">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="goToSettings" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#setGoToSettings" prefHeight="36.0" prefWidth="200.0" styleClass="sidebar-button" text="Settings">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutY="609.0" prefHeight="144.0" prefWidth="135.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Button fx:id="sidebarLogoutButton" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="5.0" mnemonicParsing="false" onAction="#logout" prefHeight="37.0" prefWidth="142.0" styleClass="sidebar-button" text="Sign out">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../media/LogoutSidebar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="5.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="142.0" styleClass="sidebar-button" text="Help">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="5.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="142.0" styleClass="sidebar-button" text="Report">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" height="102.3" offsetX="6.0" offsetY="9.0" radius="39.0975" spread="0.03" width="56.09">
+                           <color>
+                              <Color opacity="0.693009078502655" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+   <left>
+      <AnchorPane minHeight="491.0" prefHeight="675.0" prefWidth="47.0" styleClass="sidebar-anchorpane" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" layoutX="-3.0" layoutY="86.0" onMouseClicked="#viewProfile" prefHeight="152.0" prefWidth="53.0" spacing="15.0" AnchorPane.bottomAnchor="478.79999999999995" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="-2.6000000000000014" AnchorPane.topAnchor="86.0">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Home.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="goToProfileView11" mnemonicParsing="false" onAction="#viewProfile" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" onMouseClicked="#viewProfile" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/profile.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Dashboard.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Notification.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="goToSettings1" mnemonicParsing="false" onAction="#setGoToSettings" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../media/Settings.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
